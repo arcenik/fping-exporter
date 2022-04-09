@@ -1,4 +1,4 @@
-FROM golang:alpine AS build
+FROM golang:1.17-alpine AS build
 RUN apk add --update --no-cache ca-certificates git
 ADD . /src
 RUN cd /src && CGO_ENABLED=0 go build -o fping-exporter
